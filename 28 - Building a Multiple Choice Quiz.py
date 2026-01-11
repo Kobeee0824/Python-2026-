@@ -1,4 +1,11 @@
-from Question import Question
+#from Question import Question (magganito ka kapag nasa ibang file yung class mo)
+
+class Question:
+  def __init__(self, prompt, answer):
+    self.prompt = prompt
+    self.answer = answer
+
+
 
 question_prompts = [
   "What color are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
@@ -6,7 +13,9 @@ question_prompts = [
   "What color are strawberries?\n(a) Yellow\n(b) Red\n(c) Blue\n\n"
 ]
 
+#object
 questions = [
+
   Question(question_prompts[0], "a"),
   Question(question_prompts[1], "c"),
   Question(question_prompts[2], "b")
@@ -18,6 +27,6 @@ def run_test(questions):
     answer = input(question.prompt)
     if answer == question.answer:
       score += 1
-  print("You got " + str(score) + "/" + str(len(questions)) + "Correct")
+  print("You got " + str(score) + "/" + str(len(questions)) + " Correct")
 
 run_test(questions)
